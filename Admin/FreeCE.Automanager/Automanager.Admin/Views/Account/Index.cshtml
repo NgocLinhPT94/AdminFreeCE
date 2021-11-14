@@ -1,0 +1,33 @@
+﻿@model Automanager.Entity.InfoModel.TestLoginInfo
+@{
+    ViewBag.Title = "NGOC LINH PT";
+}
+
+<h2>Test LOGIN</h2>
+<body>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <div>
+                TEST LOGIN
+            </div>
+            @using (Html.BeginForm("TestLogin", "Account", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(m => m.username)
+                    @Html.TextBoxFor(m => m.username, "", new { @class = "form-control"})
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.pass)
+                    @Html.PasswordFor(m => m.pass, new { @class = "form-control"})
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Kiem tra nhe" />
+                </div>
+            }
+
+        </div>
+
+    </div>
+</body>
